@@ -30,6 +30,7 @@ func GenerateImage(c *gin.Context) {
 
 	// Originally we get endpoint from Story
 	// But for now we are using a local service
+	// For segreagating btw nebulus and huggingface he logic should be in services itself
 	req, err := http.NewRequest("POST", "http://localhost:3000/huggingface/image", bytes.NewBuffer(jsonData))
 	if err != nil {
 		c.JSON(500, gin.H{"error": err.Error()})

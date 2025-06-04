@@ -2,6 +2,7 @@
 import express from 'express';
 import cors from 'cors';
 import { handleHuggingFaceImage } from './services/huggingface-image.js';
+import { handleHuggingFaceVideo } from './services/huggingface-video.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.post('/huggingface/image', handleHuggingFaceImage);
+app.post('/huggingface/video', handleHuggingFaceVideo);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -34,4 +36,5 @@ app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
   console.log('Available endpoints:');
   console.log('- POST /huggingface/image - For image generation');
+  console.log('- POST /huggingface/video - For video generation');
 });
