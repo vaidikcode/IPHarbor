@@ -2,9 +2,10 @@ package models
 
 // Implementation of huggin face services using curl command
 type Generate struct {
-	provider    string `json:"provider"`
-	model       string `json:"model"`
-	contentType string `json:"content_type"`
-	url		    string `json:"url"`
-	token	   string `json:"token"`
+	Prompt      string `json:"prompt"`
+	Provider    string `json:"provider"`
+	Model       string `json:"model"`
+	ContentType string `json:"content_type"`
+	Url         string `json:"url"`
+	Token       string `json:"token"`
 }
